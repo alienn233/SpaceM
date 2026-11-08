@@ -1,33 +1,17 @@
-# Trained models and large assets
+# Models and positive references
 
-The Git repository contains source code, small examples, documentation and figures. Full trained weights and database archives remain separate from Git source history. **A fresh clone does not yet contain all assets required for model inference. No public asset download URL has been published in this release.**
+[Release v0.1.0](https://github.com/alienn233/SpaceM/releases/tag/v0.1.0) contains the trained inference models and reference libraries. Run `python scripts/download_assets.py` from the extracted SpaceM source directory to download, verify and install them.
 
-The verified B5 archive contains:
+| Archive | Installed contents |
+|---|---|
+| `SpaceM_core_models.tar.gz` | Binary and conditional LightGBM checkpoints, fold vocabularies, UNIFIED248 model/feature lock and the ESM2-8M backbone |
+| `SpaceM_ARG_fine_models.tar.gz` | ARG checkpoints for three seeds and five folds |
+| `SpaceM_MRG_fine_models.tar.gz` | MRG checkpoints for three seeds and five folds |
+| `SpaceM_MGE_fine_models.tar.gz` | MGE checkpoints for three seeds and five folds |
+| Six reference `.gz` files | ARG/MRG/MGE positive FAA files and matching metadata TSV files |
 
-| Archive | Compressed bytes | Purpose |
-|---|---:|---|
-| `01_algorithm_models.tar.zst` | 2,838,274,818 | Frozen hierarchy, fine models and runtime |
-| `02_training_data.tar.zst` | 17,822,996,859 | Training-data and provenance archive |
-| `03_botelho_results_and_sources.tar.zst` | 22,459,159,195 | Context datasets, results and source scripts |
-| `04_annotation_resources.tar.zst` | 12,598,820,248 | Pfam, eggNOG and oriT assets |
-| `05_preprocessing_references.tar.zst` | 22,112,049 | Additional target-alignment and preprocessing references |
+The asset manifest records archive sizes, integrity checks and FAA sequence counts. The installer combines the weights with the source runtime under `assets/runtime/`. Positive references are placed under `assets/references/ARG`, `MRG` and `MGE`, matching `examples/botelho/references.json`.
 
-Each archive was stream-validated when built. Internal integrity manifests accompany the B5 distribution. These sizes describe existing archives, not files claimed to be hosted in this repository.
+The example supplies frozen ESM2-650M embeddings. Generating embeddings for additional proteins uses the upstream [ESM2-t33-650M-UR50D checkpoint](https://huggingface.co/facebook/esm2_t33_650M_UR50D).
 
-The runtime expects:
-
-```text
-runtime/
-  bin/ and lib/
-  config/runtime.json
-  models/v3_gate/fold_checkpoints/fold0..4/
-  models/v2_conditional/fold_checkpoints/fold0..4/
-  models/unified248/
-  vault/                         # three tasks, 15 fine checkpoints per task
-```
-
-Point `SPACEM_RUNTIME` to the extracted complete runtime, not the source-only `algorithms/runtime` directory. Place the positive FAA libraries and metadata under `assets/references/` or adjust `examples/botelho/references.json`. The example HTML can be viewed without any model or database download.
-
-Source snapshots in `algorithms/research` retain stage-specific training entry points. They require the matching archived input tables, labels, split definitions and dependencies. They are not interchangeable one-command retraining recipes, and should not be run against a new dataset without adapting the input contract.
-
-Third-party resources retain their original redistribution terms. This repository does not apply a new license to those resources.
+Research/training source snapshots are in `algorithms/research/`. Full training-data archives and stage-specific split tables are maintained separately from this inference release.

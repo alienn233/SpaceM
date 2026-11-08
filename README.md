@@ -1,70 +1,148 @@
 # SpaceM
 
-**Genome-centric identification of resistance functions and mobile genetic contexts.**
+**A genome-centric workflow linking resistance functions to mobile genetic contexts.**
 
-SpaceM links target recognition, functional profiles and locus-level mobile-element association in one workflow. It integrates frozen protein-language-model representations with gene organization, neighborhood function and DNA context, followed by task-specific ESM2-8M fine-tuning.
+SpaceM identifies ARG, MRG and MGE proteins, resolves their functional profiles, scores resistance loci for mobile-element association, and attaches sequence matches to curated positive references.
 
 ![SpaceM architecture](Fig1_SpaceM.png)
 
-[完整中文算法流程](ALGORITHM_ZH.md) · [Software](SOFTWARE.md) · [Databases](DATABASES.md) · [Inputs and outputs](INPUTS_OUTPUTS.md) · [Model assets](MODEL_ASSETS.md)
+[Algorithm](ALGORITHM.md) · [Installation](INSTALLATION.md) · [Databases](DATABASES.md) · [Inputs and outputs](INPUTS_OUTPUTS.md) · [Models](MODEL_ASSETS.md)
 
-## Download the complete source and example
-
-[Download SpaceM source and examples (ZIP)](SpaceM_source_examples_20261108.zip). The archive preserves all 150 files and their directory structure, including source code, prepared inputs and the interactive HTML report. Extract it and work inside the `SpaceM/` folder. Documentation and Fig. 1 are also available separately in this repository.
-
-## Workflow
-
-1. **Prepare genome-linked proteins.** Match protein sequences, contig coordinates, frozen ESM2-8M/650M embeddings, Pfam/eggNOG annotations and DNA-context features. The center gene and ten CDS on either side define the W10 neighborhood.
-2. **Recognize targets.** Five V3HN LightGBM models distinguish target proteins from OTHER using 2,564 features and a fixed threshold of 0.737447579539902.
-3. **Assign the target class.** Five conditional V2 LightGBM models distinguish ARG, MRG and MGE using their own saved fold vocabularies.
-4. **Resolve functions.** Three ESM2-8M fine-tuned branches predict 15 ARG drug labels, 23 MRG metal labels or seven MGE functions. ARG/MRG are multilabel; MGE is single-label. Each task uses 15 models.
-5. **Score mobile genetic association.** UNIFIED248 combines spatial MGE evidence, neighborhood/DNA context, oriT and cargo information at ARG/MRG loci. Its fixed threshold is 0.1396680282651571. The score measures ICE/IME-reference association, not observed transfer probability.
-6. **Attach reference evidence.** Predicted ARG/MRG/MGE proteins are aligned to the three positive FAA libraries. Identity, both coverages, source labels and cross-class disagreements are reported separately from model output. OTHER alignments are not displayed.
-7. **Inspect and export.** A self-contained HTML report provides searchable predictions, functional probabilities, full-context mobility scores, genomic neighborhoods and downloadable tables.
-
-## Example report
-
-Download and extract [the source archive](SpaceM_source_examples_20261108.zip), then open `SpaceM/results/demo/report.html` in a browser. No server or internet connection is required. GitHub's source-file view does not execute the interactive HTML.
-
-The example includes 10 proteins: two predicted ARG, two MRG, four MGE and two OTHER; reference alignments are shown for the eight predicted targets. Four resistance loci have full-context mobility scores. These previously analyzed development examples demonstrate software execution and are not independent accuracy estimates.
-
-## Run
-
-After extracting the source archive, run the commands below from its `SpaceM/` directory. This release starts from **prepared sequence/context features**. It is not a raw-FASTA-only annotation command. Full trained checkpoints and external reference databases must be provisioned separately; see [asset availability](MODEL_ASSETS.md). The source-only runtime in this repository does not contain those weights.
+## 1. Download the workflow and example data
 
 ```bash
-export PYTHONNOUSERSITE=1
-export HF_HUB_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
-export SPACEM_RUNTIME=/absolute/path/to/complete/runtime
-export SPACEM_FINE_PYTHON=/absolute/path/to/fine-environment/bin/python
-export SPACEM_DIAMOND=/absolute/path/to/diamond
-
-/absolute/path/to/score-environment/bin/python scripts/workflow.py \
-  --inputs examples/botelho/inputs.json \
-  --out results/new_run --threads 4
+git clone https://github.com/alienn233/SpaceM.git
+cd SpaceM
 ```
 
-Configure `examples/botelho/references.json` with the FAA and metadata paths. Use a new output directory. Two verified inference environments and the extra tools for raw annotation are documented in [SOFTWARE.md](SOFTWARE.md).
+The repository includes the complete source tree, prepared Botelho example inputs and expected results. The same files are also available in [the source archive](SpaceM_source_examples_20261108.zip).
 
-## Layout inside the source archive
+| Example input | Contents |
+|---|---|
+| `examples/botelho/proteins.faa` | Ten protein sequences |
+| `examples/botelho/proteins.parquet` | Protein IDs, host/contig coordinates and strand |
+| `esm8.npy`, `esm650.npy` | Frozen ESM2-8M/650M representations |
+| `portable.npy`, `pfam.parquet`, `eggnog.parquet`, `mag.parquet` | Gene organization, neighborhood function and DNA features |
+| `base229.parquet`, `local44.parquet` | Inputs for reconstructing the 248 mobility features |
+| `BOTELHO_CASES.tsv`, `BOTELHO_CASE_GENES.tsv` | Reference cases and neighborhood coordinates |
+| `inputs.json`, `references.json` | Relative-path input and reference configurations |
 
-```text
-scripts/                  linked inference, alignment and report entry points
-algorithms/runtime/       source-only frozen runtime and feature contracts
-algorithms/research/      stage-specific research/training source snapshots
-examples/botelho/         small prepared-feature demonstration inputs
-results/demo/             computed example report and results
-figures/                  latest Fig. 1: PNG, PDF, SVG and Illustrator source
-docs/                     algorithm, data, software, input/output and asset guides
+## 2. Install with Conda or Mamba
+
+The environment files target Linux x86-64 CPU inference, matching B5. [Miniforge](https://github.com/conda-forge/miniforge) provides both Conda and Mamba. Full setup instructions are in [INSTALLATION.md](INSTALLATION.md).
+
+Using Conda:
+
+```bash
+conda env create -f envs/score.yml
+conda env create -f envs/fine-cpu.yml
+conda env create -f envs/tools.yml
 ```
 
-## Interpretation
+Or using Mamba:
 
-Reference evidence, model functional calls and mobile-element association describe different levels of evidence. Reference intervals are not prediction features. Unknown or OTHER proteins are not experimentally verified negatives, and a high mobility score does not establish active transfer. The report displays full contexts only and does not include simulated-fragment comparison panels.
+```bash
+mamba env create -f envs/score.yml
+mamba env create -f envs/fine-cpu.yml
+mamba env create -f envs/tools.yml
+```
 
-## Figure and resource provenance
+| Environment | Components | Purpose |
+|---|---|---|
+| `spacem-score` | Python 3.14, NumPy, pandas, PyArrow, LightGBM, scikit-learn, SciPy | Feature assembly and hierarchy/mobility scoring |
+| `spacem-fine` | Python 3.10, PyTorch 2.5.1 CPU, Transformers, Matplotlib | ESM2 fine inference and report generation |
+| `spacem-tools` | DIAMOND 2.2.6 | Positive-reference alignment |
 
-Fig. 1 is the architecture revision dated **2026-11-08**. It summarizes SpaceM-db, SpaceM-Func and SpaceM-Mob. The positive protein libraries contain 28,543 ARG, 55,397 MRG and 85,818 MGE representatives; these are not interchangeable with fine-task training counts or genome-expanded candidates. See [database provenance](DATABASES.md), including the distinction between inherited CARD evidence and a separately inventoried CARD FASTA.
+## 3. Install models and positive references
 
-Third-party resources retain their respective licenses. No license is implicitly granted for external databases or pretrained models by this repository.
+[Release v0.1.0](https://github.com/alienn233/SpaceM/releases/tag/v0.1.0) provides all trained models needed for the example, together with the positive FAA libraries and their annotation tables.
+
+```bash
+conda run -n spacem-score python scripts/download_assets.py
+```
+
+The installer verifies each archive and creates `assets/runtime/` and `assets/references/`. Mamba users can replace `conda run` with `mamba run`.
+
+| Asset | Contents |
+|---|---|
+| Core models | Five binary models, five conditional models, fold vocabularies, UNIFIED248 and the ESM2-8M backbone |
+| ARG fine models | 15 checkpoints predicting 15 drug labels |
+| MRG fine models | 15 checkpoints predicting 23 metal labels |
+| MGE fine models | 15 checkpoints predicting seven functions |
+| ARG references | 28,543 proteins and source/label metadata |
+| MRG references | 55,397 proteins and source/label metadata |
+| MGE references | 85,818 proteins and source/label metadata |
+
+## 4. Run and validate the example
+
+```bash
+conda run -n spacem-score python scripts/run_demo.py --threads 4 --out results/my_demo
+conda run -n spacem-score python scripts/validate_demo.py --inputs examples/botelho/inputs.json --out results/my_demo
+```
+
+Mamba equivalent:
+
+```bash
+mamba run -n spacem-score python scripts/run_demo.py --manager mamba --threads 4 --out results/my_demo
+mamba run -n spacem-score python scripts/validate_demo.py --inputs examples/botelho/inputs.json --out results/my_demo
+```
+
+Open `results/my_demo/report.html` to explore predictions, functional probabilities, reference matches, mobility scores and genomic neighborhoods. The supplied result is available at `results/demo/report.html`. Each new run uses a new output directory.
+
+The workflow performs target recognition, conditional ARG/MRG/MGE assignment, task-specific fine inference, mobility scoring, positive-reference search and report generation. It averages five models at each hierarchy stage and 15 models per fine task. ARG/MRG support multiple functional labels; MGE receives one functional class. Alignment results are shown for predicted targets.
+
+## 5. Expected results
+
+The ten-protein example yields two ARG, two MRG, four MGE and two OTHER predictions. Eight predicted targets have 50 retained reference hits. Four resistance loci receive full-context mobility scores.
+
+| Resistance locus | Class | Functional labels | Mobility association score |
+|---|---|---|---:|
+| `NZ_CP023819.1_2492` | ARG | tetracycline | 0.8937 |
+| `NZ_CP040439.1_1280` | MRG | Co; Ni | 0.7275 |
+| `NZ_CP041395.1_2112` | ARG | tetracycline | 0.8420 |
+| `NZ_CP026377.1_3769` | MRG | Ag | 0.4799 |
+
+These Botelho development cases illustrate predictions from the deployed models.
+
+### Target recognition and class assignment
+
+![Target and conditional class probabilities](01_hierarchy.png)
+
+The target gate is followed by conditional ARG/MRG/MGE probabilities. The dashed line marks the target threshold.
+
+### Functional profiles
+
+![Functional profiles](02_fine_functions.png)
+
+Asterisks identify selected drug/metal labels or the selected MGE function. Complete probabilities are provided in the result tables.
+
+### Mobility association
+
+![Mobility association scores](03_mobility_context.png)
+
+The four resistance loci are scored in their full genomic contexts. The dashed line marks the fixed threshold of 0.139668.
+
+### Genomic neighborhoods
+
+![Genomic neighborhoods](04_genomic_neighborhoods.png)
+
+Targets are enlarged, with ten CDS shown on either side. Green shading marks reference ICE/IME intervals; colors identify predicted gene classes.
+
+## Main outputs
+
+| File | Result |
+|---|---|
+| `GENE_CLASSIFICATION.tsv` | Target probabilities, classes and functional labels |
+| `03_fine/*_8M_FINE.tsv` | All functional probabilities and thresholds |
+| `04_mobility/MOBILITY_UNIFIED248.tsv.gz` | Mobility association scores and calls |
+| `05_alignment/PREDICTED_TARGET_REFERENCE_HITS.tsv` | Positive-reference alignments for predicted targets |
+| `PREDICTIONS_WITH_REFERENCE.tsv` | Joined prediction and reference evidence |
+| `report.html` | Interactive results |
+| `RESULTS.txt` | Result descriptions and figure legends |
+| `VALIDATION.json` | Reproduction checks |
+
+## Apply to another dataset
+
+Prepare protein sequences, consistent CDS coordinates and the sequence/context features listed in [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md). Copy `examples/botelho/inputs.json`, update the input paths, and run `scripts/workflow.py`. [INSTALLATION.md](INSTALLATION.md) lists the Pfam, eggNOG, ESM-2 and oriT resources used to generate these features; [ALGORITHM.md](ALGORITHM.md) describes their biological roles and the model stages.
+
+Third-party resources retain their original licenses and citation requirements.

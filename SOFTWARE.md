@@ -1,5 +1,7 @@
 # Software and environments
 
+For Conda/Mamba setup and asset installation, see [INSTALLATION.md](INSTALLATION.md).
+
 ## Verified B5 inference environment
 
 The deployed workflow uses two Python environments. The versions below were read from the installed environment or its retained run record; they are not claims about current upstream releases.
@@ -11,6 +13,8 @@ The deployed workflow uses two Python environments. The versions below were read
 | pandas | 3.0.5 | 2.3.3 |
 | PyArrow | 25.0.0 | 25.0.1 |
 | LightGBM | 4.7.0 | — |
+| scikit-learn | 1.9.1 | — |
+| SciPy | 1.18.1 | — |
 | PyTorch | — | 2.5.1 (CPU build on B5) |
 | Transformers | — | 4.57.6 |
 | Matplotlib | — | 3.10.9 |

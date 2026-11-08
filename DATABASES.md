@@ -46,6 +46,6 @@ The eggNOG snapshot was verified with eggNOG-mapper **2.1.15**. A separately pre
 
 ## Provisioning
 
-Large databases and trained checkpoints are not stored as ordinary Git source files. Install the frozen assets separately and set the paths in `examples/botelho/references.json`. Each ARG/MRG/MGE entry requires a protein `fasta` and matching `metadata` TSV. Relative paths resolve from the configuration file's directory.
+The positive FAA libraries, metadata and trained checkpoints are distributed in [Release v0.1.0](https://github.com/alienn233/SpaceM/releases/tag/v0.1.0). Run `python scripts/download_assets.py` to install them at the paths configured in `examples/botelho/references.json`. Each ARG/MRG/MGE entry requires a protein `fasta` and matching `metadata` TSV. Relative paths resolve from the configuration file's directory.
 
 Reference annotations must retain stable IDs, labels and source information; reusing a different release without rebuilding the relevant features can break the trained vocabulary and feature contract. Third-party databases retain their respective licenses and citation requirements.

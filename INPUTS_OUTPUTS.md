@@ -28,7 +28,7 @@ Do not fill absent context with arbitrary zeros. A boundary-related missing neig
 | `05_alignment/PREDICTED_TARGET_REFERENCE_HITS.tsv` | Displayed positive-library hits for predicted ARG/MRG/MGE only |
 | `PREDICTIONS_WITH_REFERENCE.tsv` | Per-protein summary; OTHER reference fields are blank; target reference disagreements retained |
 | `report.html` | Offline interactive report: filter, sort, inspect, download |
-| `RESULTS_中文.txt` | Chinese example explanations and figure legends |
+| `RESULTS.txt` | Example explanations and figure legends |
 | `figures/` | Workflow, classification, fine functions, full-context mobility and neighborhoods |
 
 MGE/OTHER cargo mobility is `NOT_APPLICABLE`. ARG/MRG without supplied context is `CONTEXT_NOT_PROVIDED`. Predicted OTHER proteins remain in the classification table, but their positive-reference alignments are not displayed or included in the target-hit download. This display restriction is not an accuracy claim about excluded proteins.

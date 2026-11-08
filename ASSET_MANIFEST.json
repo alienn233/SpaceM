@@ -1,0 +1,87 @@
+{
+  "release": "v0.1.0",
+  "base_url": "https://github.com/alienn233/SpaceM/releases/download/v0.1.0/",
+  "assets": [
+    {
+      "file": "SpaceM_core_models.tar.gz",
+      "bytes": 53478971,
+      "sha256": "08f884769af6504d54e193c8807d24a8d59b7d5facc4af566687de55c5b81067",
+      "kind": "models"
+    },
+    {
+      "file": "SpaceM_ARG_fine_models.tar.gz",
+      "bytes": 414898094,
+      "sha256": "c34df9b5e40855cd2f2a0980836943ffb865d0fb2fb88f13586fb384793e52f5",
+      "kind": "models"
+    },
+    {
+      "file": "SpaceM_MRG_fine_models.tar.gz",
+      "bytes": 415040017,
+      "sha256": "872d0f68b606722354d7dcd60b45a2e45d8bf0e2cbe2fc315f2f0f213ab9ea97",
+      "kind": "models"
+    },
+    {
+      "file": "SpaceM_MGE_fine_models.tar.gz",
+      "bytes": 414761903,
+      "sha256": "891ed9c904ddcb5f4255f60120f9aece994316c395d47eb8d73e1c0738866724",
+      "kind": "models"
+    },
+    {
+      "file": "ARG_ARG_POS_ALL.faa.gz",
+      "bytes": 4919387,
+      "sha256": "29ddf196690d68a5165246b8126793fcbd952d4b0e314096503262d11ca0b29e",
+      "kind": "reference",
+      "class": "ARG",
+      "role": "fasta",
+      "destination": "assets/references/ARG/ARG_POS_ALL.faa",
+      "sequences": 28543
+    },
+    {
+      "file": "ARG_ARG_POS_ALL.tsv.gz",
+      "bytes": 8908100,
+      "sha256": "68d936363c8b1c81da2288e9eeaeb062846274512c52cb7e2092a04fb20705a1",
+      "kind": "reference",
+      "class": "ARG",
+      "role": "metadata",
+      "destination": "assets/references/ARG/ARG_POS_ALL.tsv"
+    },
+    {
+      "file": "MRG_PROTEIN_POSITIVES.faa.gz",
+      "bytes": 14892387,
+      "sha256": "ae7dfd9c5132cc79d87e4c6182195e53c691c0c8309ac1da8a60e86b8ccdfdb3",
+      "kind": "reference",
+      "class": "MRG",
+      "role": "fasta",
+      "destination": "assets/references/MRG/PROTEIN_POSITIVES.faa",
+      "sequences": 55397
+    },
+    {
+      "file": "MRG_PROTEIN_POSITIVE_METADATA.tsv.gz",
+      "bytes": 27854440,
+      "sha256": "a850648edd55ebe4c3040637741d3c23ed481d739ee65d71b39b96b8f15feb9a",
+      "kind": "reference",
+      "class": "MRG",
+      "role": "metadata",
+      "destination": "assets/references/MRG/PROTEIN_POSITIVE_METADATA.tsv"
+    },
+    {
+      "file": "MGE_POS_7CLASS.faa.gz",
+      "bytes": 19342680,
+      "sha256": "043e229481d9dc6aa61798088698eed91b4e807cc84d53cb8142e8d2255ca17b",
+      "kind": "reference",
+      "class": "MGE",
+      "role": "fasta",
+      "destination": "assets/references/MGE/POS_7CLASS.faa",
+      "sequences": 85818
+    },
+    {
+      "file": "MGE_POS_7CLASS.tsv.gz",
+      "bytes": 34308453,
+      "sha256": "5689e0f18b0a95a63effc91c6f3a8e323595993c193068b51574cf619c4ee019",
+      "kind": "reference",
+      "class": "MGE",
+      "role": "metadata",
+      "destination": "assets/references/MGE/POS_7CLASS.tsv"
+    }
+  ]
+}

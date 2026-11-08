@@ -1,0 +1,37 @@
+name: Publish packaged source
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract the released source tree
+        run: |
+          python - <<'PYCODE'
+          from pathlib import Path
+          import zipfile
+          root = Path.cwd()
+          with zipfile.ZipFile('SpaceM_source_examples_20261108.zip') as archive:
+              for member in archive.infolist():
+                  if member.is_dir():
+                      continue
+                  relative = Path(member.filename).relative_to('SpaceM')
+                  destination = (root / relative).resolve()
+                  if root not in destination.parents or '.git' in relative.parts:
+                      raise ValueError(member.filename)
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  destination.write_bytes(archive.read(member))
+          PYCODE
+      - name: Publish the browsable source
+        run: |
+          git rm --ignore-unmatch ALGORITHM_ZH.md ALGORITHM.md DATABASES.md SOFTWARE.md MODEL_ASSETS.md INPUTS_OUTPUTS.md DEPLOYMENT.md INSTALLATION.md ARCHIVES.json RESOURCE_INDEX.json PREPROCESSING_REFERENCES.json ASSET_MANIFEST.json Fig1_SpaceM.ai Fig1_SpaceM.pdf Fig1_SpaceM.png Fig1_SpaceM.svg 01_hierarchy.png 02_fine_functions.png 03_mobility_context.png 04_genomic_neighborhoods.png publish-source.yml
+          git add README.md .gitignore .github algorithms assets docs envs examples figures requirements-*.txt results scripts
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish reproducible SpaceM source and examples'
+            git push
+          fi
