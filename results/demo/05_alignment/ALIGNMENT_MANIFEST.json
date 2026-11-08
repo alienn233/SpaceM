@@ -1,0 +1,31 @@
+{
+  "tool": "diamond version 2.2.6",
+  "query": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/05_alignment/PREDICTED_TARGETS.faa",
+  "query_scope": "predicted ARG/MRG/MGE only",
+  "references": [
+    {
+      "class": "ARG",
+      "fasta": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/references/ARG/ARG_POS_ALL.faa",
+      "metadata": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/references/ARG/ARG_POS_ALL.tsv",
+      "fasta_sha256": "87d9657bed26881da9c0f27a995b91564bad7d376a80a67577ca145a93ab81ac",
+      "hits": 20
+    },
+    {
+      "class": "MRG",
+      "fasta": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/references/MRG/PROTEIN_POSITIVES.faa",
+      "metadata": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/references/MRG/PROTEIN_POSITIVE_METADATA.tsv",
+      "fasta_sha256": "41b14f5a61fdffceddca6b19daeb73b2e37b09f999aacf111ec55d51b604a8e7",
+      "hits": 10
+    },
+    {
+      "class": "MGE",
+      "fasta": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/references/MGE/POS_7CLASS.faa",
+      "metadata": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/references/MGE/POS_7CLASS.tsv",
+      "fasta_sha256": "bb60698d23d59725f0808d98198440b607845f9612754fa62ee8de2fa01948b2",
+      "hits": 20
+    }
+  ],
+  "retrieval": "up to five targets per reference class; sensitive; evalue <= 1e-5",
+  "strict_support": "identity >90%, query coverage >90%, subject coverage >90%, evalue <1e-5",
+  "purpose": "descriptive reference annotation; full positive libraries, not fold-safe benchmarking; predictions unchanged"
+}

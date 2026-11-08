@@ -1,0 +1,12 @@
+{
+  "state": "PASS",
+  "proteins": 10,
+  "hierarchy_max_abs_difference": 0.0,
+  "feature_reconstruction": "all 248 locked model features match archived visible-context features",
+  "nonmodel_metadata_note": "raw reconstruction does not fill all redundant host/fragment coordinate columns; joined protein coordinates and example context tables provide positions",
+  "fine_models_per_task": 15,
+  "mobility_contexts": 8,
+  "joined_rows": 14,
+  "figure_sets": 5,
+  "scope": "software reproduction on development examples; not independent accuracy"
+}

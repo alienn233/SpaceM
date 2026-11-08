@@ -1,0 +1,67 @@
+{
+  "pipeline_id": "SPACEM_V3HN_V2_8M_UNIFIED248_20261102",
+  "policy": {
+    "target_classes": [
+      "ARG",
+      "MRG",
+      "MGE"
+    ],
+    "other_class": "OTHER",
+    "virulence_factor_branch_enabled": false,
+    "v3_clean_hn_user_fixed_override": true,
+    "v3_formal_selection_result": "KEEP_V2_CONTROL",
+    "v3_override_note": "The user explicitly fixed V3 CLEAN_HN for stage-1 membership despite the V3 selection comparison retaining V2 control."
+  },
+  "hierarchy": {
+    "python": "/ifs1/User/yanyueyang/.conda/envs/full_binary_hybrid_tools/bin/python",
+    "v3_clean_hn_gate_root": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/runtime/models/v3_gate",
+    "v3_gate_threshold": 0.737447579539902,
+    "v2_conditional_subtype_root": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/runtime/models/v2_conditional",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "feature_dimension": 2564,
+    "feature_contract": "center ESM2-8M 320 + center ESM2-650M 1280 + coordinate-safe context 44 + Pfam numeric/vocab + eggNOG numeric/vocab + ABC141 MAG DNA",
+    "matrix_contract": "V3 and V2 fold matrices are separate because their fold-specific vocabularies differ."
+  },
+  "fine_models": {
+    "predictor": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/runtime/vault/bin/predict_multiclass_b5.py",
+    "vault_root": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/runtime/vault",
+    "python": "/ifs1/User/yanyueyang/.conda/envs/protein_feature_core/bin/python",
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "routing": {
+      "ARG": "arg",
+      "MRG": "bacmet",
+      "MGE": "mge"
+    },
+    "semantics": {
+      "ARG": "15-label multilabel ESM2-8M full fine-tune, weighted BCE",
+      "MRG": "23-label multilabel ESM2-8M full fine-tune, weighted BCE",
+      "MGE": "7-class single-label ESM2-8M full fine-tune, weighted CE"
+    }
+  },
+  "mobility": {
+    "version": "UNIFIED248_20261102",
+    "model_root": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/assets/runtime/models/unified248",
+    "feature_dimension": 248,
+    "threshold": 0.1396680282651571,
+    "endpoint": "ICE_IME_reference_interval_association",
+    "raw_sequence_feature_generation_required_before_inference": true,
+    "old_v3_adapter_enabled": false
+  }
+}

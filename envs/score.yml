@@ -1,0 +1,15 @@
+name: spacem-score
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.14
+  - pip
+  - libgomp
+  - pip:
+      - numpy==2.5.3
+      - pandas==3.0.5
+      - pyarrow==25.0.0
+      - lightgbm==4.7.0
+      - scikit-learn==1.9.1
+      - scipy==1.18.1

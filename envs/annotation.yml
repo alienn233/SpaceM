@@ -1,0 +1,12 @@
+name: spacem-annotation
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - python=3.10
+  - hmmer=3.4
+  - diamond=2.2.6
+  - mmseqs2=18.8cc5c
+  - cd-hit
+  - blast

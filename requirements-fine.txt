@@ -1,0 +1,6 @@
+torch==2.5.1
+transformers==4.57.6
+numpy==2.2.6
+pandas==2.3.3
+matplotlib==3.10.9
+pyarrow==25.0.1

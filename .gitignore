@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log
+*.dmnd
+.env
+assets/downloads/
+assets/runtime/
+assets/references/
+assets/pretrained/
+assets/annotation/
+results/new_run*/
+results/my_demo/
+results/reproduced/
+*.part

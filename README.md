@@ -4,9 +4,9 @@
 
 SpaceM identifies ARG, MRG and MGE proteins, resolves their functional profiles, scores resistance loci for mobile-element association, and attaches sequence matches to curated positive references.
 
-![SpaceM architecture](Fig1_SpaceM.png)
+![SpaceM architecture](figures/Fig1_SpaceM.png)
 
-[Algorithm](ALGORITHM.md) · [Installation](INSTALLATION.md) · [Databases](DATABASES.md) · [Inputs and outputs](INPUTS_OUTPUTS.md) · [Models](MODEL_ASSETS.md)
+[Algorithm](docs/ALGORITHM.md) · [Installation](docs/INSTALLATION.md) · [Databases](docs/DATABASES.md) · [Inputs and outputs](docs/INPUTS_OUTPUTS.md) · [Models](docs/MODEL_ASSETS.md)
 
 ## 1. Download the workflow and example data
 
@@ -29,7 +29,7 @@ The repository includes the complete source tree, prepared Botelho example input
 
 ## 2. Install with Conda or Mamba
 
-The environment files target Linux x86-64 CPU inference, matching B5. [Miniforge](https://github.com/conda-forge/miniforge) provides both Conda and Mamba. Full setup instructions are in [INSTALLATION.md](INSTALLATION.md).
+The environment files target Linux x86-64 CPU inference, matching B5. [Miniforge](https://github.com/conda-forge/miniforge) provides both Conda and Mamba. Full setup instructions are in [INSTALLATION.md](docs/INSTALLATION.md).
 
 Using Conda:
 
@@ -106,25 +106,25 @@ These Botelho development cases illustrate predictions from the deployed models.
 
 ### Target recognition and class assignment
 
-![Target and conditional class probabilities](01_hierarchy.png)
+![Target and conditional class probabilities](results/demo/figures/01_hierarchy.png)
 
 The target gate is followed by conditional ARG/MRG/MGE probabilities. The dashed line marks the target threshold.
 
 ### Functional profiles
 
-![Functional profiles](02_fine_functions.png)
+![Functional profiles](results/demo/figures/02_fine_functions.png)
 
 Asterisks identify selected drug/metal labels or the selected MGE function. Complete probabilities are provided in the result tables.
 
 ### Mobility association
 
-![Mobility association scores](03_mobility_context.png)
+![Mobility association scores](results/demo/figures/03_mobility_context.png)
 
 The four resistance loci are scored in their full genomic contexts. The dashed line marks the fixed threshold of 0.139668.
 
 ### Genomic neighborhoods
 
-![Genomic neighborhoods](04_genomic_neighborhoods.png)
+![Genomic neighborhoods](results/demo/figures/04_genomic_neighborhoods.png)
 
 Targets are enlarged, with ten CDS shown on either side. Green shading marks reference ICE/IME intervals; colors identify predicted gene classes.
 
@@ -143,6 +143,6 @@ Targets are enlarged, with ten CDS shown on either side. Green shading marks ref
 
 ## Apply to another dataset
 
-Prepare protein sequences, consistent CDS coordinates and the sequence/context features listed in [INPUTS_OUTPUTS.md](INPUTS_OUTPUTS.md). Copy `examples/botelho/inputs.json`, update the input paths, and run `scripts/workflow.py`. [INSTALLATION.md](INSTALLATION.md) lists the Pfam, eggNOG, ESM-2 and oriT resources used to generate these features; [ALGORITHM.md](ALGORITHM.md) describes their biological roles and the model stages.
+Prepare protein sequences, consistent CDS coordinates and the sequence/context features listed in [INPUTS_OUTPUTS.md](docs/INPUTS_OUTPUTS.md). Copy `examples/botelho/inputs.json`, update the input paths, and run `scripts/workflow.py`. [INSTALLATION.md](docs/INSTALLATION.md) lists the Pfam, eggNOG, ESM-2 and oriT resources used to generate these features; [ALGORITHM.md](docs/ALGORITHM.md) describes their biological roles and the model stages.
 
 Third-party resources retain their original licenses and citation requirements.

@@ -1,0 +1,19 @@
+{
+  "ids": "ids.txt",
+  "protein_table": "proteins.parquet",
+  "protein_fasta": "proteins.faa",
+  "esm8": "esm8.npy",
+  "esm650": "esm650.npy",
+  "portable_context": "portable.npy",
+  "pfam": "pfam.parquet",
+  "eggnog": "eggnog.parquet",
+  "mag": "mag.parquet",
+  "mobility_base229": "base229.parquet",
+  "mobility_local44": "local44.parquet",
+  "case_table": "BOTELHO_CASES.tsv",
+  "case_genes": "BOTELHO_CASE_GENES.tsv",
+  "selection": "SELECTION.tsv",
+  "archived_mobility_oof": "ARCHIVED_MOBILITY_OOF.tsv",
+  "prediction_context": "development_refit_not_independent_evaluation",
+  "positive_references": "references.json"
+}

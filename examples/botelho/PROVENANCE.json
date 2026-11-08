@@ -1,0 +1,13 @@
+{
+  "selection": "four previously analysed internal explanatory cases; not random and not independent evaluation",
+  "proteins": 10,
+  "class_counts": {
+    "MGE": 4,
+    "ARG": 2,
+    "OTHER": 2,
+    "MRG": 2
+  },
+  "mobility_rows": 8,
+  "context": "full host and 20 kb; frozen full-host upstream annotations reused",
+  "references_used_for_features": false
+}

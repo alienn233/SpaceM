@@ -1,0 +1,14 @@
+{
+  "ARG": {
+    "fasta": "../../assets/references/ARG/ARG_POS_ALL.faa",
+    "metadata": "../../assets/references/ARG/ARG_POS_ALL.tsv"
+  },
+  "MRG": {
+    "fasta": "../../assets/references/MRG/PROTEIN_POSITIVES.faa",
+    "metadata": "../../assets/references/MRG/PROTEIN_POSITIVE_METADATA.tsv"
+  },
+  "MGE": {
+    "fasta": "../../assets/references/MGE/POS_7CLASS.faa",
+    "metadata": "../../assets/references/MGE/POS_7CLASS.tsv"
+  }
+}

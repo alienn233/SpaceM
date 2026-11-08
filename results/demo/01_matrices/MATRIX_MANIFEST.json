@@ -1,0 +1,106 @@
+{
+  "ids": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/ids.txt",
+  "inputs": {
+    "eggnog": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/eggnog.parquet",
+    "esm650": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/esm650.npy",
+    "esm8": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/esm8.npy",
+    "mag": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/mag.parquet",
+    "pfam": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/pfam.parquet",
+    "portable_context": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/examples/botelho/portable.npy"
+  },
+  "records": [
+    {
+      "columns": 2564,
+      "family": "v3",
+      "fold": 0,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v3/fold0.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "5c031cb55fb445e8c133f60b6de577ac59e8743560fedff83fe2747c3b1865b5"
+    },
+    {
+      "columns": 2564,
+      "family": "v3",
+      "fold": 1,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v3/fold1.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "3b7189bff858f394bba928825516e64b6a59c161ea1c87133dcfe49e96be80de"
+    },
+    {
+      "columns": 2564,
+      "family": "v3",
+      "fold": 2,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v3/fold2.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "9fee0e11af2b111ceddb171b07b10419d22229cacac46e75216168301ea9fcb2"
+    },
+    {
+      "columns": 2564,
+      "family": "v3",
+      "fold": 3,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v3/fold3.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "e26b38736a6b87ee6397d251c2ea93f05b8afa9b9c77f9ccfad55dcdd30b5d4a"
+    },
+    {
+      "columns": 2564,
+      "family": "v3",
+      "fold": 4,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v3/fold4.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "44a369b4ecf1dabfc314d564c91fd95c7db06f684f337987e9a4b19aacb4d766"
+    },
+    {
+      "columns": 2564,
+      "family": "v2",
+      "fold": 0,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v2/fold0.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "d780b53fe2b046798368763c64eabb9ac36f4c2dcf3d622b2510da345607f2cf"
+    },
+    {
+      "columns": 2564,
+      "family": "v2",
+      "fold": 1,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v2/fold1.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "54594c463de6f805fe62923e6dd838869363afbfdb8a0ffb0a8d7ba79d3fd3f5"
+    },
+    {
+      "columns": 2564,
+      "family": "v2",
+      "fold": 2,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v2/fold2.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "3cf777dca7bd1bddc84c10eca971d09a24df019c2092b11944388da3b1f515c4"
+    },
+    {
+      "columns": 2564,
+      "family": "v2",
+      "fold": 3,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v2/fold3.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "dd5a87843b41158914a416284f2e19d191fcbbbe2558a760fc79d9c8a87b8a10"
+    },
+    {
+      "columns": 2564,
+      "family": "v2",
+      "fold": 4,
+      "mag_missing_values": 10,
+      "matrix_file": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/01_matrices/v2/fold4.f32.npy",
+      "rows": 10,
+      "vocab_sha256": "52fc2f3ebc39adf59d55a9666ab56bdafec3af0257389e738e26f2846750fe6e"
+    }
+  ],
+  "rows": 10,
+  "separate_v3_v2_matrices": true,
+  "state": "FOLD_MATRICES_COMPLETE"
+}

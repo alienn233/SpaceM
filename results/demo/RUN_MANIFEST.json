@@ -1,0 +1,15 @@
+{
+  "state": "COMPLETE",
+  "proteins": 10,
+  "class_counts": {
+    "MGE": 4,
+    "ARG": 2,
+    "OTHER": 2,
+    "MRG": 2
+  },
+  "mobility_contexts": 8,
+  "fine_models_per_task": 15,
+  "prediction_context": "development_refit_not_independent_evaluation",
+  "entry_point": "prepared_sequence_and_context_features",
+  "raw_annotation_recomputed": false
+}

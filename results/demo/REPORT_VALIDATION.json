@@ -1,0 +1,10 @@
+{
+  "state": "PASS",
+  "proteins": 10,
+  "alignment_eligible": 8,
+  "displayed_hits": 50,
+  "OTHER_hits_displayed": 0,
+  "full_context_scores": 4,
+  "review_required": 1,
+  "model_predictions_changed": false
+}

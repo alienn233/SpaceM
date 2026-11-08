@@ -1,0 +1,35 @@
+{
+  "records": [
+    {
+      "class": "ARG",
+      "models": 15,
+      "output": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/03_fine/ARG_8M_FINE.tsv",
+      "sequences": 2,
+      "status": "COMPLETE",
+      "task": "arg"
+    },
+    {
+      "class": "MRG",
+      "models": 15,
+      "output": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/03_fine/MRG_8M_FINE.tsv",
+      "sequences": 2,
+      "status": "COMPLETE",
+      "task": "bacmet"
+    },
+    {
+      "class": "MGE",
+      "models": 15,
+      "output": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/03_fine/MGE_8M_FINE.tsv",
+      "sequences": 4,
+      "status": "COMPLETE",
+      "task": "mge"
+    }
+  ],
+  "routing": {
+    "ARG": "arg",
+    "MGE": "mge",
+    "MRG": "bacmet"
+  },
+  "state": "FINE_MODELS_COMPLETE",
+  "virulence_factor_branch_enabled": false
+}

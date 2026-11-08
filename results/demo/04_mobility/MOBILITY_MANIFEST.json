@@ -1,0 +1,12 @@
+{
+  "model": "UNIFIED248_20261102",
+  "rows": 8,
+  "features": 248,
+  "threshold": 0.1396680282651571,
+  "model_sha256": "e4e4dcfa4a9bf497357ae3148ebc09cd47be68a3972a4b6bafea4d61d23540fa",
+  "prediction_context": "development_refit_not_independent_evaluation",
+  "model_refitted": false,
+  "old_mobility_v3_called": false,
+  "input": "/ifs1/User/yanyueyang/yyy/gene-finder/releases/SPACEM_PUBLIC_REPRO_20261108/results/reproduced/FEATURES248.parquet",
+  "columns_selected_by_locked_whitelist": true
+}

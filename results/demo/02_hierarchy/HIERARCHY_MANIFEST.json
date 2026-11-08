@@ -1,0 +1,56 @@
+{
+  "class_counts": {
+    "ARG": 2,
+    "MGE": 4,
+    "MRG": 2
+  },
+  "conditional_subtype": "V2 formal fold-safe five-fold mean",
+  "gate": "V3 CLEAN_HN five-fold mean",
+  "gate_threshold": 0.737447579539902,
+  "model_provenance": [
+    {
+      "fold": 0,
+      "v2_subtype_sha256": "a2bb2a5c8213721ddc9adb0c567255a1506bf40b3a0e6ec4345d7e25658c5baa",
+      "v2_vocab_sha256": "d780b53fe2b046798368763c64eabb9ac36f4c2dcf3d622b2510da345607f2cf",
+      "v3_gate_sha256": "624bc3f40393f3876cae0b9fcca20dfa3091def15ffaf6dfdc388e259b7cda48",
+      "v3_vocab_sha256": "5c031cb55fb445e8c133f60b6de577ac59e8743560fedff83fe2747c3b1865b5"
+    },
+    {
+      "fold": 1,
+      "v2_subtype_sha256": "1bc56733922221e8d0f5f6e8114ebb12a00b5675069b8e6e288ff77a28663b8c",
+      "v2_vocab_sha256": "54594c463de6f805fe62923e6dd838869363afbfdb8a0ffb0a8d7ba79d3fd3f5",
+      "v3_gate_sha256": "bbdabf140d9e4d8010fef61046ee6cf2c13724cf41a59912de7bd37aed39c437",
+      "v3_vocab_sha256": "3b7189bff858f394bba928825516e64b6a59c161ea1c87133dcfe49e96be80de"
+    },
+    {
+      "fold": 2,
+      "v2_subtype_sha256": "890eda23bf611c4dc3e1765318fc4743cc2154a1b5e489e12837b7b79d6becca",
+      "v2_vocab_sha256": "3cf777dca7bd1bddc84c10eca971d09a24df019c2092b11944388da3b1f515c4",
+      "v3_gate_sha256": "6e6bfec79ff5c15de022d788609c1aa41f80c5e95ac7ae2442f001ad451d4e31",
+      "v3_vocab_sha256": "9fee0e11af2b111ceddb171b07b10419d22229cacac46e75216168301ea9fcb2"
+    },
+    {
+      "fold": 3,
+      "v2_subtype_sha256": "9a473ef10f03b5c7331daee614691a72562a1fa5b9d2f696d75b5dce9a196b2c",
+      "v2_vocab_sha256": "dd5a87843b41158914a416284f2e19d191fcbbbe2558a760fc79d9c8a87b8a10",
+      "v3_gate_sha256": "c7f5c5ef09ed89ccbce51d9bf16383f3be11479aa2a8eacd0e23ecff9ef46b92",
+      "v3_vocab_sha256": "e26b38736a6b87ee6397d251c2ea93f05b8afa9b9c77f9ccfad55dcdd30b5d4a"
+    },
+    {
+      "fold": 4,
+      "v2_subtype_sha256": "8f0202c2044c85e1940533bab7ab703130c8f40410bfc5ab8f9c0a97fb387ebb",
+      "v2_vocab_sha256": "52fc2f3ebc39adf59d55a9666ab56bdafec3af0257389e738e26f2846750fe6e",
+      "v3_gate_sha256": "0a768eaad0ebfff8b0d61f8854ab25c0a3324a5a2c7e84589031f5fb65032981",
+      "v3_vocab_sha256": "44a369b4ecf1dabfc314d564c91fd95c7db06f684f337987e9a4b19aacb4d766"
+    }
+  ],
+  "no": 2,
+  "rows": 10,
+  "selection_boundary": "The user explicitly fixed V3 CLEAN_HN for stage-1 membership despite the V3 selection comparison retaining V2 control.",
+  "selection_override_by_user": true,
+  "state": "HIERARCHY_COMPLETE",
+  "v2_gate_head_used": false,
+  "v3_subtype_head_used": false,
+  "virulence_factor_branch_enabled": false,
+  "yes": 8
+}

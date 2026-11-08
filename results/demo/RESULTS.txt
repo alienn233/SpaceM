@@ -1,0 +1,49 @@
+SpaceM predictions and reference evidence
+
+
+
+10 proteins: ARG 2, MRG 2, MGE 4, OTHER 2. Mobility scores use full genomic contexts.
+
+
+
+NZ_CP023819.1_2492: ARG; target probability 0.9997. Functional labels: tetracycline. Best reference: TETW;tet(W);tetW (ARG, ARG_025766); identity 99.5%; query/reference coverage 99.8%/100.0%. Mobility association score 0.8937; threshold 0.139668. 
+
+NZ_CP023819.1_2484: MGE; target probability 0.9989. Functional labels: relaxase. Best reference: mobC (MGE, MGEV2_049098); identity 97.0%; query/reference coverage 99.2%/100.0%. 
+
+NZ_CP023819.1_2505: OTHER; target probability 0.7236. 
+
+NZ_CP040439.1_1280: MRG; target probability 0.9996. Functional labels: Co;Ni. Best reference: nrsD/nreB (MRG, PRE:WP_021162751.1:dd08112abd20); identity 100.0%; query/reference coverage 99.8%/100.0%. Mobility association score 0.7275; threshold 0.139668. 
+
+NZ_CP040439.1_1292: MGE; target probability 0.9993. Functional labels: conjugative_t4ss. Best reference: trbB (MGE, MGEV2_038337); identity 96.2%; query/reference coverage 98.0%/97.2%. 
+
+NZ_CP041395.1_2112: ARG; target probability 0.9362. Functional labels: tetracycline. Best reference: tetQ (ARG, ARG_011642); identity 100.0%; query/reference coverage 99.8%/97.6%. Mobility association score 0.8420; threshold 0.139668. 
+
+NZ_CP041395.1_2120: MGE; target probability 0.9992. Functional labels: relaxase. Best reference: mobB (MGE, MGEV2_052373); identity 100.0%; query/reference coverage 99.8%/100.0%. 
+
+NZ_CP041395.1_2129: OTHER; target probability 0.0720. 
+
+NZ_CP026377.1_3769: MRG; target probability 0.9991. Functional labels: Ag. Best reference: silB (MRG, PRE:WP_001485328.1:063d835c6fa4); identity 100.0%; query/reference coverage 99.8%/100.0%. Mobility association score 0.4799; threshold 0.139668. Strict matches span ARG / MRG reference classes; review the overlap.
+
+NZ_CP026377.1_3778: MGE; target probability 0.9991. Functional labels: transposase. Best reference: insF (MGE, MGEV2_047454); identity 98.5%; query/reference coverage 99.6%/100.0%. 
+
+
+
+Reference search: predicted targets are searched against each positive FAA library with DIAMOND, E <= 1e-5, retaining up to five hits per library. Strict support requires identity and both coverages >90% and E <1e-5.
+
+
+
+Figure legends
+
+Workflow: linked target recognition, conditional classification, functional profiling and mobility association.
+
+Classification: target probabilities and conditional ARG/MRG/MGE probabilities. The dashed line marks the target threshold.
+
+Functional profiles: selected labels are marked with an asterisk; ARG/MRG support multiple labels and MGE has one selected class.
+
+Mobility: full-context association scores for resistance loci; the dashed line marks the fixed threshold.
+
+Neighborhoods: the enlarged target and ten CDS on either side. Green shading marks reference ICE/IME intervals; unassessed neighbors are shown separately.
+
+
+
+These examples come from the Botelho development dataset and use the deployed models.

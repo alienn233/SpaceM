@@ -1,0 +1,11 @@
+protein_id	model_class	model_fine_labels	target_probability	mobility_association_score	mobility_threshold	best_reference_id	best_reference_class	best_reference_name	best_reference_labels	reference_sources	identity_pct	query_coverage_pct	subject_coverage_pct	evalue	strict_reference_support	strict_reference_classes	model_reference_review_required	reference_review_reason
+NZ_CP023819.1_2492	ARG	tetracycline	0.9996636944	0.8936553868	0.1396680283	ARG_025766	ARG	TETW;tet(W);tetW	tetracycline antibiotic	deeparg;megares;resfinder	99.5	99.8	100.0	0.0	True	ARG	False	
+NZ_CP023819.1_2484	MGE	relaxase	0.998922382			MGEV2_049098	MGE	mobC	relaxase	mobileOG	97.0	99.2	100.0	6.69e-87	True	MGE	False	
+NZ_CP023819.1_2505	OTHER		0.723624936												False		False	
+NZ_CP040439.1_1280	MRG	Co;Ni	0.999589173	0.7274942758	0.1396680283	PRE:WP_021162751.1:dd08112abd20	MRG	nrsD/nreB	Nickel (Ni), Cobalt (Co)	BacMet_PRE	100.0	99.8	100.0	4.43e-290	True	MRG	False	
+NZ_CP040439.1_1292	MGE	conjugative_t4ss	0.9992840551			MGEV2_038337	MGE	trbB	conjugative_t4ss	ICEberg;mobileOG	96.2	98.0	97.2	7.7e-229	True	MGE	False	
+NZ_CP041395.1_2112	ARG	tetracycline	0.9362341442	0.842047902	0.1396680283	ARG_011642	ARG	tetQ	tetracycline antibiotic	deeparg;ncbi	100.0	99.8	97.6	0.0	True	ARG	False	
+NZ_CP041395.1_2120	MGE	relaxase	0.9992251226			MGEV2_052373	MGE	mobB	relaxase	ICEberg;mobileOG	100.0	99.8	100.0	1.55e-301	True	MGE	False	
+NZ_CP041395.1_2129	OTHER		0.0719746194												False		False	
+NZ_CP026377.1_3769	MRG	Ag	0.9990638495	0.4798878746	0.1396680283	PRE:WP_001485328.1:063d835c6fa4	MRG	silB	Silver (Ag)	BacMet_PRE	100.0	99.8	100.0	1.82e-311	True	ARG;MRG	True	Strict matches span ARG / MRG reference classes; review the overlap.
+NZ_CP026377.1_3778	MGE	transposase	0.9991459977			MGEV2_047454	MGE	insF	transposase	mobileOG	98.5	99.6	100.0	1.01e-201	True	MGE	False	
