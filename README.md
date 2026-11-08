@@ -1,4 +1,4 @@
-# SpaceM
+# SpaceM (Space-MAG)
 
 **A genome-centric workflow linking resistance functions to mobile genetic contexts.**
 
