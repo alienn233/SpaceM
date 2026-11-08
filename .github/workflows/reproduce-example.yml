@@ -20,7 +20,11 @@ jobs:
           mamba env create -y -f envs/fine-cpu.yml
           mamba env create -y -f envs/tools.yml
       - name: Download and verify public model and reference assets
-        run: conda run -n spacem-score python scripts/download_assets.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v0.1.0 --repo alienn233/SpaceM --dir assets/downloads
+          conda run -n spacem-score python scripts/download_assets.py --local-dir assets/downloads
       - name: Reproduce all prediction stages
         run: conda run -n spacem-score python scripts/run_demo.py --threads 2 --out results/reproduced
       - name: Compare with the published results
