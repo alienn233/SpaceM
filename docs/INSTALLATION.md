@@ -79,6 +79,15 @@ Reference paths are already configured in `examples/botelho/references.json`. Fo
 conda run -n spacem-score python scripts/download_assets.py --local-dir /path/to/release_assets
 ```
 
+To download through an authenticated GitHub CLI session and install the same verified files:
+
+```bash
+mamba install -n spacem-tools -c conda-forge gh
+conda run -n spacem-tools gh auth login
+conda run -n spacem-tools gh release download v0.1.0 --repo alienn233/SpaceM --dir assets/downloads
+conda run -n spacem-score python scripts/download_assets.py --local-dir assets/downloads
+```
+
 ## Run the complete example
 
 ```bash
@@ -89,6 +98,8 @@ conda run -n spacem-score python scripts/validate_demo.py --inputs examples/bote
 `run_demo.py` locates the fine-inference Python and DIAMOND in their named environments, then executes the complete prepared-feature workflow. It writes the HTML report to `results/my_demo/report.html`. With Mamba, use `mamba run` and add `--manager mamba` to `run_demo.py`.
 
 The demonstration inputs include precomputed ESM2, Pfam, eggNOG and DNA-context features. These inputs are sufficient to reproduce its model predictions and reference alignments.
+
+The [Reproduce example workflow](../.github/workflows/reproduce-example.yml) executes these installation, prediction and validation stages on a fresh GitHub runner. Fork the repository and select **Actions > Reproduce example > Run workflow**. Download `SpaceM-reproduced-results` from the completed run to obtain its HTML report, figures, tables and validation record.
 
 ## Generate features for additional genomes
 
