@@ -63,6 +63,15 @@ conda run -n spacem-score python scripts/download_assets.py
 
 The installer verifies each archive and creates `assets/runtime/` and `assets/references/`. Mamba users can replace `conda run` with `mamba run`.
 
+For an authenticated download with the GitHub CLI:
+
+```bash
+mamba install -n spacem-tools -c conda-forge gh
+conda run -n spacem-tools gh auth login
+conda run -n spacem-tools gh release download v0.1.0 --repo alienn233/SpaceM --dir assets/downloads
+conda run -n spacem-score python scripts/download_assets.py --local-dir assets/downloads
+```
+
 | Asset | Contents |
 |---|---|
 | Core models | Five binary models, five conditional models, fold vocabularies, UNIFIED248 and the ESM2-8M backbone |
@@ -88,6 +97,8 @@ mamba run -n spacem-score python scripts/validate_demo.py --inputs examples/bote
 ```
 
 Open `results/my_demo/report.html` to explore predictions, functional probabilities, reference matches, mobility scores and genomic neighborhoods. The supplied result is available at `results/demo/report.html`. Each new run uses a new output directory.
+
+The [Reproduce example workflow](.github/workflows/reproduce-example.yml) creates fresh environments, downloads the release assets, runs every prediction stage and validates the outputs. Fork the repository and select **Actions > Reproduce example > Run workflow** to execute it on GitHub. The resulting artifact contains the report, figures, prediction tables and validation record.
 
 The workflow performs target recognition, conditional ARG/MRG/MGE assignment, task-specific fine inference, mobility scoring, positive-reference search and report generation. It averages five models at each hierarchy stage and 15 models per fine task. ARG/MRG support multiple functional labels; MGE receives one functional class. Alignment results are shown for predicted targets.
 
