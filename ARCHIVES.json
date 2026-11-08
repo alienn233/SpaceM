@@ -1,0 +1,58 @@
+{
+  "archives": [
+    {
+      "file": "01_algorithm_models.tar.zst",
+      "bytes": 2838274818,
+      "sha256": "44eb9f4b62945031cc218b2581c07bb53fccf8ef3b8cc73aca93acd9768a419b",
+      "file_count": 125,
+      "complete": true,
+      "verified_tar_members": 125,
+      "uncompressed_member_bytes": 4055041762,
+      "zstd_and_tar_stream_verified": true
+    },
+    {
+      "file": "02_training_data.tar.zst",
+      "bytes": 17822996859,
+      "sha256": "d6012969cc7e38e7964230c99a2b87d508ce5d8a8fadeaf55771082599339b89",
+      "file_count": 5253,
+      "complete": true,
+      "verified_tar_members": 5253,
+      "uncompressed_member_bytes": 36561334134,
+      "zstd_and_tar_stream_verified": true
+    },
+    {
+      "file": "03_botelho_results_and_sources.tar.zst",
+      "bytes": 22459159195,
+      "sha256": "433440efc23781abd0f3793cf174f1d18fd8c4220b927828f21ea7d4dfd88cc2",
+      "file_count": 8378,
+      "complete": true,
+      "verified_tar_members": 8378,
+      "uncompressed_member_bytes": 68624291042,
+      "zstd_and_tar_stream_verified": true
+    },
+    {
+      "file": "04_annotation_resources.tar.zst",
+      "bytes": 12598820248,
+      "sha256": "6f039236af4c74433d2b646be8ad97d2f97282424cd9ed88e50206fe3f7935f2",
+      "source_bytes": 55746141013,
+      "files": 29,
+      "complete": true,
+      "verified_tar_members": 29,
+      "uncompressed_member_bytes": 55746141013,
+      "zstd_and_tar_stream_verified": true
+    },
+    {
+      "file": "05_preprocessing_references.tar.zst",
+      "bytes": 22112049,
+      "sha256": "e2410595ff18718adefe6bbbac02517a9258fa651939f3227e1d056ca0651cd7",
+      "files": 8,
+      "source_bytes": 120684524,
+      "complete": true,
+      "verified_tar_members": 8,
+      "uncompressed_member_bytes": 120684524,
+      "zstd_and_tar_stream_verified": true
+    }
+  ],
+  "compressed_total_bytes": 55741363169,
+  "verification": "All compressed archives fully streamed and tar members checked; SHA256 from creation retained."
+}

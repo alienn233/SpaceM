@@ -1,0 +1,152 @@
+{
+  "included_in_separate_archive": true,
+  "resources": [
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/pfam_v1_1/Pfam-A.hmm",
+      "archive_path": "resources/pfam/Pfam-A.hmm",
+      "bytes": 2246909846
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/pfam_v1_1/Pfam-A.hmm.h3i",
+      "archive_path": "resources/pfam/Pfam-A.hmm.h3i",
+      "bytes": 2983425
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/pfam_v1_1/Pfam-A.hmm.h3m",
+      "archive_path": "resources/pfam/Pfam-A.hmm.h3m",
+      "bytes": 928801003
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/pfam_v1_1/Pfam-A.hmm.h3f",
+      "archive_path": "resources/pfam/Pfam-A.hmm.h3f",
+      "bytes": 531685301
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/pfam_v1_1/Pfam-A.hmm.h3p",
+      "archive_path": "resources/pfam/Pfam-A.hmm.h3p",
+      "bytes": 1094551483
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/pfam_v1_1/Pfam.version",
+      "archive_path": "resources/pfam/Pfam.version",
+      "bytes": 111
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/database/eggnog/eggnog.db",
+      "archive_path": "resources/eggnog/eggnog.db",
+      "bytes": 41370988544
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/database/eggnog/eggnog.taxa.db",
+      "archive_path": "resources/eggnog/eggnog.taxa.db",
+      "bytes": 278003712
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/database/eggnog/eggnog.taxa.db.traverse.pkl",
+      "archive_path": "resources/eggnog/eggnog.taxa.db.traverse.pkl",
+      "bytes": 6628719
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/database/eggnog/eggnog_proteins.dmnd",
+      "archive_path": "resources/eggnog/eggnog_proteins.dmnd",
+      "bytes": 9285439161
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/database/eggnog/EGGNOG_V2_INSTALL_REPORT.md",
+      "archive_path": "resources/eggnog/EGGNOG_V2_INSTALL_REPORT.md",
+      "bytes": 2694
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/oriT_exp.fasta",
+      "archive_path": "resources/orit/oriT_exp.fasta",
+      "bytes": 22862
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/oriT_exp.fasta.sha256",
+      "archive_path": "resources/orit/oriT_exp.fasta.sha256",
+      "bytes": 89
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/oriT_exp.clean.fasta",
+      "archive_path": "resources/orit/oriT_exp.clean.fasta",
+      "bytes": 20887
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/oriT_exp.metadata.tsv",
+      "archive_path": "resources/orit/oriT_exp.metadata.tsv",
+      "bytes": 12160
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/oriT_exp.qc.tsv",
+      "archive_path": "resources/orit/oriT_exp.qc.tsv",
+      "bytes": 96
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/metadata.tsv",
+      "archive_path": "resources/orit/metadata.tsv",
+      "bytes": 12160
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/qc.tsv",
+      "archive_path": "resources/orit/qc.tsv",
+      "bytes": 96
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.ndb",
+      "archive_path": "resources/orit/blastdb/orit_exp.ndb",
+      "bytes": 40960
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.ntf",
+      "archive_path": "resources/orit/blastdb/orit_exp.ntf",
+      "bytes": 16384
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.nin",
+      "archive_path": "resources/orit/blastdb/orit_exp.nin",
+      "bytes": 1572
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.nhr",
+      "archive_path": "resources/orit/blastdb/orit_exp.nhr",
+      "bytes": 5808
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.nsq",
+      "archive_path": "resources/orit/blastdb/orit_exp.nsq",
+      "bytes": 4857
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.nog",
+      "archive_path": "resources/orit/blastdb/orit_exp.nog",
+      "bytes": 496
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.nos",
+      "archive_path": "resources/orit/blastdb/orit_exp.nos",
+      "bytes": 2336
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.not",
+      "archive_path": "resources/orit/blastdb/orit_exp.not",
+      "bytes": 1400
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.nto",
+      "archive_path": "resources/orit/blastdb/orit_exp.nto",
+      "bytes": 468
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/orit/blastdb/orit_exp.njs",
+      "archive_path": "resources/orit/blastdb/orit_exp.njs",
+      "bytes": 579
+    },
+    {
+      "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/scripts/21_parse_orit.py",
+      "archive_path": "resources/oriT_parser/21_parse_orit.py",
+      "bytes": 3804
+    }
+  ],
+  "scope": "Pfam-A pressed HMM; eggNOG annotation/taxonomy/DIAMOND DB; oriT reference and parser",
+  "raw_bioinformatics_executables_must_be_installed_in_host_environment": true
+}

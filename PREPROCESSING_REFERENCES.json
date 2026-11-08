@@ -1,0 +1,42 @@
+[
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/MOBILITY_V3_BOTELHO_DIAMOND_20261027/db/MRG_EXP_PRE.faa",
+    "archive_path": "resources/target_diamond/MRG_EXP_PRE.faa",
+    "bytes": 35976999
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/MOBILITY_V3_BOTELHO_DIAMOND_20261027/db/ARG.dmnd",
+    "archive_path": "resources/target_diamond/ARG.dmnd",
+    "bytes": 11292956
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/MOBILITY_V3_BOTELHO_DIAMOND_20261027/db/MRG.dmnd",
+    "archive_path": "resources/target_diamond/MRG.dmnd",
+    "bytes": 36563415
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/MOBILITY_V3_BOTELHO_DIAMOND_20261027/db/MGE7.dmnd",
+    "archive_path": "resources/target_diamond/MGE7.dmnd",
+    "bytes": 36812445
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/attc/attc_4.cm",
+    "archive_path": "resources/attc/attc_4.cm",
+    "bytes": 32279
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/db/attc/attc_4.cm.sha256",
+    "archive_path": "resources/attc/attc_4.cm.sha256",
+    "bytes": 76
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/scripts/11_parse_attc.py",
+    "archive_path": "resources/parsers/11_parse_attc.py",
+    "bytes": 2550
+  },
+  {
+    "source": "/ifs1/User/yanyueyang/yyy/gene-finder/01.db/03-mge/mobility_dna/scripts/21_parse_orit.py",
+    "archive_path": "resources/parsers/21_parse_orit.py",
+    "bytes": 3804
+  }
+]
