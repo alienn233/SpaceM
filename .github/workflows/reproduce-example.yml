@@ -1,0 +1,38 @@
+name: Reproduce example
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Miniforge
+        run: |
+          curl -L --fail --retry 3 -o "$RUNNER_TEMP/Miniforge3.sh" https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+          bash "$RUNNER_TEMP/Miniforge3.sh" -b -p "$RUNNER_TEMP/miniforge3"
+          echo "$RUNNER_TEMP/miniforge3/bin" >> "$GITHUB_PATH"
+      - name: Create the documented environments
+        run: |
+          mamba env create -y -f envs/score.yml
+          mamba env create -y -f envs/fine-cpu.yml
+          mamba env create -y -f envs/tools.yml
+      - name: Download and verify public model and reference assets
+        run: conda run -n spacem-score python scripts/download_assets.py
+      - name: Reproduce all prediction stages
+        run: conda run -n spacem-score python scripts/run_demo.py --threads 2 --out results/reproduced
+      - name: Compare with the published results
+        run: conda run -n spacem-score python scripts/validate_demo.py --inputs examples/botelho/inputs.json --out results/reproduced
+      - name: Save report and validation
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpaceM-reproduced-results
+          path: |
+            results/reproduced/report.html
+            results/reproduced/VALIDATION.json
+            results/reproduced/RESULTS.txt
+            results/reproduced/GENE_CLASSIFICATION.tsv
+            results/reproduced/PREDICTIONS_WITH_REFERENCE.tsv
+            results/reproduced/figures/
